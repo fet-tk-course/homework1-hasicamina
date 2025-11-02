@@ -1,4 +1,5 @@
 Opis projekta
+
 Cilj ovog projekta bio je primijeniti naucene koncepte u Kotlinu kroz modeliranje jednostavnog sistema za organizaciju programerskih meetup događaja.
 Zadatak obuhvata:
 definisanje interfejsa i hijerarhije klasa,
