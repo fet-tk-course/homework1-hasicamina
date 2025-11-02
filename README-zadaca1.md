@@ -7,7 +7,7 @@ Cilj ovog projekta bio je primijeniti naučene koncepte u Kotlinu kroz modeliran
 - izračun i analizu podataka nad listom programera.
 
 ## Klasa – Programer
-Predstavlja osnovnu klasu koja implementira interfejs Osoba i opisuje zajedničke osobine svih programera.
+Predstavlja osnovnu klasu koja implementira interfejs Programeri i opisuje zajedničke osobine svih programera.
 Sadrži:
 - ime i prezime,
 - godine iskustva,
