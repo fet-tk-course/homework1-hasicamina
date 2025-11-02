@@ -4,15 +4,13 @@ Cilj ovog projekta bio je primijeniti naucene koncepte u Kotlinu kroz modeliranj
 Zadatak obuhvata:
 definisanje interfejsa i hijerarhije klasa,
 
-
 rad sa kolekcijama i funkcijama višeg reda,
-
 
 izračun i analizu podataka nad listom programera.
 
 Klasa – Programer
 Predstavlja osnovnu klasu koja implementira interfejs Osoba i opisuje zajedničke osobine svih programera.
- Sadrži:
+Sadrži:
 ime i prezime,
 
 
@@ -80,21 +78,16 @@ Formatiran i dosljedan prikaz, npr.:
 Provjere ispravnosti
  U glavnom programu dodane su najmanje tri check provjere:
 
-
 da lista sadrži najmanje 5 programera,
 
-
 da postoji barem jedan backend programer,
-
 
 da postoji barem jedan frontend programer.
 
 
 
 
-
-
-Kako pokrenuti program
+Kako pokrenuti program:
 Otvoriti projekt u bilo kojem Kotlin IDE-u (npr. IntelliJ IDEA).
 
 
@@ -117,15 +110,11 @@ Filtrirane liste po frameworku.
 
 
 Uporedna analiza pristupa
-Funkcija
-Funkcionalni pristup
-Ručni pristup
-Prebrojavanje jezika
-flatMap + groupingBy + eachCount
-Petlja + mutableMap
-Prosječno iskustvo po jeziku
-flatMap + groupBy + mapValues
-Petlja + sumiranje + brojač
+Funkcija                               Funkcionalni pristup                                    Ručni pristup
+
+Prebrojavanje jezika             flatMap + groupingBy + eachCount                      Petlja + mutableMap
+
+Prosječno iskustvo po jeziku        flatMap + groupBy + mapValues                       Petlja + sumiranje + brojač
 
 
 
@@ -135,52 +124,101 @@ Provjere ispravnosti: ✓
 Sve provjere su prošle uspješno! 
 
 Lista programera: 
-Amila Hodžić — Backend programer — jezici: java, kotlin, python — framework: Spring Boot Emir Softić — Backend programer — jezici: java, kotlin — framework: Ktor 
-Sara Kovač — Frontend programer — jezici: javascript, typescript — framework: React Marko Petrović — Frontend programer — jezici: css, html, javascript — framework: Vue.js Anna Schmidt — Backend programer — jezici: go, python — framework: Django
- Lena Müller — Frontend programer — jezici: javascript, typescript — framework: Angular 
+Amila Hodžić — Backend programer — jezici: java, kotlin, python — framework: Spring Boot 
+
+Emir Softić — Backend programer — jezici: java, kotlin — framework: Ktor 
+
+Sara Kovač — Frontend programer — jezici: javascript, typescript — framework: React 
+
+Marko Petrović — Frontend programer — jezici: css, html, javascript — framework: Vue.js 
+
+Anna Schmidt — Backend programer — jezici: go, python — framework: Django
+
+Lena Müller — Frontend programer — jezici: javascript, typescript — framework: Angular 
+
 
 Prebrojavanje jezika (funkcionalno):
  kotlin -> 2 
+ 
 java -> 2
+
  python -> 2
+
  javascript -> 3
- typescript -> 
-2 html -> 1
+ 
+ typescript -> 2
+ 
+ html -> 1
+ 
  css -> 1
+ 
  go -> 1
+ 
+ 
  Prebrojavanje jezika (ručno):
 
  kotlin -> 2 
+
  java -> 2
+ 
  python -> 2
- javascript -> 3 typescript -> 2
+ 
+ javascript -> 3
+ 
+ typescript -> 2
+ 
  html -> 1
+ 
  css -> 1
+ 
  go -> 1
+
  
 Prosječno iskustvo po jeziku (funkcionalno):
+ 
  kotlin -> 4.00
+ 
  java -> 4.00
+ 
  python -> 6.00
+ 
  javascript -> 4.00
+ 
  typescript -> 5.00
+ 
  html -> 2.00
+ 
  css -> 2.00
+ 
  go -> 7.00
 
+ 
  Prosječno iskustvo po jeziku (ručno):
+ 
  kotlin -> 4.00
+ 
  java -> 4.00
+ 
  python -> 6.00
+ 
  javascript -> 4.00
+ 
  typescript -> 5.00
+ 
  html -> 2.00
+ 
  css -> 2.00
+ 
  go -> 7.00
- Programeri koji koriste Spring Boot:
-Amila Hodžić — Backend programer — jezici: java, kotlin, python — framework: Spring Boot 
 
-Programeri koji koriste React: Sara Kovač — Frontend programer — jezici: javascript, typescript — framework: React 
+ Programeri koji koriste Spring Boot:
+
+ Amila Hodžić — Backend programer — jezici: java, kotlin, python — framework: Spring Boot 
+
+
+ Programeri koji koriste React: 
+ 
+ Sara Kovač — Frontend programer — jezici: javascript, typescript — framework: React 
 
 
 
