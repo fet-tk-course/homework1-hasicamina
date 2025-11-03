@@ -2,6 +2,7 @@ interface Programeri {
     fun puniIdentitet(): String
     fun oznakaZemlje(): String
 }
+
 open class Programer(
     val ime: String,
     val prezime: String,
@@ -17,13 +18,16 @@ open class Programer(
         require(zemlja.isNotBlank()) { "Oznaka zemlje ne može biti prazna" }
         require(programskiJezici.isNotEmpty()) { "Lista jezika ne može biti prazna" }
     }
+
     val normalizovaniJezici: List<String> = programskiJezici.map { it.lowercase() }
+
     override fun puniIdentitet(): String = "$ime $prezime"
 
     override fun oznakaZemlje(): String = zemlja
 
     open fun tipProgramera(): String = "Programer"
 }
+
 class BackendProgramer(
     ime: String,
     prezime: String,
@@ -39,6 +43,7 @@ class BackendProgramer(
 
     override fun tipProgramera(): String = "Backend programer"
 }
+
 class FrontendProgramer(
     ime: String,
     prezime: String,
@@ -54,10 +59,12 @@ class FrontendProgramer(
 
     override fun tipProgramera(): String = "Frontend programer"
 }
+
 fun prebrojiJezikeFunkcionalno(programeri: List<Programer>): Map<String, Int> =
     programeri.flatMap { it.normalizovaniJezici }
         .groupingBy { it }
         .eachCount()
+
 fun prebrojiJezikeRucno(programeri: List<Programer>): Map<String, Int> {
     val brojac = mutableMapOf<String, Int>()
     for (programer in programeri) {
@@ -67,6 +74,7 @@ fun prebrojiJezikeRucno(programeri: List<Programer>): Map<String, Int> {
     }
     return brojac.toMap()
 }
+
 fun prosjecnoIskustvoFunkcionalno(programeri: List<Programer>): Map<String, Double> =
     programeri.flatMap { p -> p.normalizovaniJezici.map { it to p.godineIskustva } }
         .groupBy({ it.first }, { it.second })
@@ -85,6 +93,24 @@ fun prosjecnoIskustvoRucno(programeri: List<Programer>): Map<String, Double> {
         ukupno.toDouble() / brojProgrameraPoJeziku[jezik]!!
     }
 }
+
+//provjera
+
+
+fun percentUsingLanguage(programeri: List<Programer>): Map<String, Double> {
+    val ukupno = programeri.size.toDouble()
+    val brojac = mutableMapOf<String, Int>()
+
+    for (programer in programeri) {
+        for (jezik in programer.normalizovaniJezici.distinct()) {
+            brojac[jezik] = brojac.getOrDefault(jezik, 0) + 1
+        }
+    }
+
+    return brojac.mapValues { (_, broj) -> (broj / ukupno) * 100 }
+}
+
+
 fun filtrirajPoFrameworku(programeri: List<Programer>, framework: String): List<Programer> =
     programeri.filter {
         when (it) {
@@ -93,6 +119,7 @@ fun filtrirajPoFrameworku(programeri: List<Programer>, framework: String): List<
             else -> false
         }
     }
+
 fun ispisiProgramera(programer: Programer) {
     val framework = when (programer) {
         is BackendProgramer -> programer.backendFramework
@@ -102,11 +129,13 @@ fun ispisiProgramera(programer: Programer) {
     val jezici = programer.normalizovaniJezici.sorted().joinToString(", ")
     println("${programer.puniIdentitet()} — ${programer.tipProgramera()} — jezici: $jezici — framework: $framework")
 }
+
 fun ispisiSveProgramere(programeri: List<Programer>) {
     println("Lista programera:")
     programeri.forEach { ispisiProgramera(it) }
     println()
 }
+
 fun <K, V> ispisiMapu(
     naslov: String,
     mapa: Map<K, V>,
@@ -153,4 +182,9 @@ fun main() {
 
     println("Programeri koji koriste React:")
     filtrirajPoFrameworku(programeri, "React").forEach { ispisiProgramera(it) }
+    
+    //provjera
+   ispisiMapu("Procenat programera koji koriste zadan jezik u odnosi na ukupan broj:",
+    percentUsingLanguage(programeri)){"%.2f".format(it)}
+    
 }
